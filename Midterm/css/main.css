@@ -1,0 +1,130 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+:root{
+    --main: #ddd;
+    --color-1: #333;
+    --light: #fff;
+    --box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+*{
+    color: var(--color-1);
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2em;
+    margin: 1em;
+}
+
+nav a:hover{
+    background: var(--color-1) !important;
+    color: var(--light) !important;
+}
+
+nav a{
+    color: var(--light);
+    box-shadow: var(--box-shadow);
+    background-color: var(--main);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    color: var(--light);
+}
+
+.grid .item {
+    box-shadow: var(--box-shadow);
+    background-color: var(--main);
+    padding: 1.5rem;
+}
+
+/* You guessed it this is main*/
+.grid .main{
+    color: var(--main);
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-end: 8;
+    background-image: url(../images/banner.jpg);
+    color: var(--light) !important;
+}
+
+/* THIS IS ON THE SIDE OF MAIN */
+.grid .sideTop{
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.grid .sideBottom{
+    grid-row-start: 4;
+    grid-row-end: 8;
+}
+
+/* THIS IS THE FONT AWESOME ICON CSS */
+.grid .row1{
+    grid-template: 150px / auto auto auto auto;
+}
+
+.grid .row1 .item{
+    grid-template-areas: inherit;
+}
+
+.grid .item .info{
+    grid-column-start:1;
+    grid-column-end: 3;
+}
+
+.grid .item .info2{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+    margin: 30px 50px;
+    line-height: 1.4;
+    background: var(--light);
+}
+
+/* Starting on grid gallery here */
+
+.grid .gallery{
+    display: inline;
+}
+
+.grid .gallery .item1{
+    background-image: 
+}
+
+button{
+    background-color: var(--color-1);
+    color: var(--light);
+}
+
+footer{
+    text-align: center;
+    background-color: var(--color-1);
+    color: #ddd;
+}
+
+@media screen and (min-width: 700px){
+    nav{
+        grid-template-columns: 1fr;
+    }
+    button{
+        display: block;
+        margin: auto;
+        text-align: auto;
+    }
+    .banner h1{
+        font-size: 2.5rem;
+    }
+}
